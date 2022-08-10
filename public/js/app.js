@@ -5,7 +5,7 @@ const messageOne = document.querySelector('#message-1')
 const messageTwo = document.querySelector('#message-2')
 
 
-const forecastURL = 'http://localhost:3000/weather?address='
+const forecastURL = '/weather?address='
 
 const fetchForecast = (address) => {
     fetchURL = forecastURL.concat(address)
@@ -33,5 +33,5 @@ weatherForm.addEventListener('submit', (event) => {
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
     fetchForecast(search.value)
-})
+
 
