@@ -29,9 +29,10 @@ const fetchForecast = (address) => {
 
 
 weatherForm.addEventListener('submit', (event) => {
+    console.log('Submit clicked!')
     event.preventDefault()
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
     fetchForecast(search.value)
-
+})
 
