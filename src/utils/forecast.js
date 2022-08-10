@@ -15,10 +15,12 @@ const forecast = (units, latitude, longitude, callback) => {
             console.log('ERROR [forecast]: ', notFoundErrorMessage)
             callback(notFoundErrorMessage, undefined)
         } else {
-            const {temperature: temp, feelslike, weather_descriptions } = body.current
+            const {temperature: temp, feelslike, weather_descriptions, humidity } = body.current
    
             callback(undefined,
-                    weather_descriptions[0] + '. It is ' + temp + ' degrees('+ units +') outside and it feels like ' + feelslike + ' degrees('+ units +') out.'
+                (weather_descriptions[0] + '. \n It is ' + temp + ' degrees(' + units + ') outside. \n' +
+                'It feels like ' + feelslike + ' degrees(' + units + ') out. \n' +
+                'Humidity: ' + humidity + '%.')
             )
         }
     })
